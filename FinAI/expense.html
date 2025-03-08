@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+   <link rel="stylesheet" href="css/expense.css">
+</head>
+<body>
+
+    <h2>Expense Splitter & Category Predictor</h2>
+
+    <form id="expenseForm">
+        <label for="description">Transaction Description:</label>
+        <input type="text" id="description" list="suggestions" required>
+        
+        <datalist id="suggestions">
+            <option value="Groceries"></option>
+            <option value="Restaurant"></option>
+            <option value="Fuel"></option>
+            <option value="Electricity Bill"></option>
+            <option value="Movie Ticket"></option>
+            <option value="Concert"></option>
+            <option value="Online Shopping"></option>
+        </datalist>
+        
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" step="0.01" required>
+
+        <label for="currency">Currency:</label>
+        <select id="currency">
+            <option value="USD">USD ($)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="EUR">EUR (€)</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="numPeople">No. of People (including you):</label>
+        <input type="number" id="numPeople" min="1" required>
+
+        <div id="friendsContainer"></div>
+
+        <label for="payer">Who Paid? (Enter name):</label>
+        <input type="text" id="payer" placeholder="Enter your name (or payer's name)">
+
+        <button type="submit">Submit Expense</button>
+    </form>
+
+    <h3 id="prediction">Predicted Category: </h3>
+
+    <div id="transactionHistory">
+        <h3>Past Transactions</h3>
+        <p>No transactions yet.</p>
+    </div>
+
+    <div id="splitSummary">
+        <h3>Who Owes What?</h3>
+        <p>No splits yet.</p>
+    </div>
+
+    <script src="js/expense.js"></script>
+
+</body>
+</html>
+
+
